@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#100d22"><title>Code Clash — Quiz Battle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="/"><span class="brand-mark">CC</span><span>CODE<span class="brand-accent">CLASH</span></span></a><span class="live-pill"><i></i> LIVE QUIZ BATTLE</span></header>
+    <section id="home" class="home-view">
+      <div class="hero-copy"><div class="eyebrow"><span class="spark">✳</span> QUICK THINKERS WANTED</div><h1>Think fast.<br><span class="gradient-text">Clash harder.</span></h1><p class="intro">Ten questions. Fifteen seconds each. One room full of rivals. Bring your brain — and your best thumb.</p>
+      <div class="feature-row"><span>⚡ SPEED BONUS</span><span>◉ 2–8 PLAYERS</span><span>✳ LIVE SCOREBOARD</span></div></div>
+      <div class="entry-card"><div class="card-top"><span class="card-index">01 / ENTER THE ARENA</span><span class="tiny-star">✳</span></div><label for="name">YOUR PLAYER NAME</label><input id="name" maxlength="18" placeholder="e.g. Quizzy McQuizface" autocomplete="nickname"><div class="entry-actions"><button id="create" class="button primary"><span>Create a room</span><b>↗</b></button><div class="divider"><span>OR JOIN A ROOM</span></div><div class="join-row"><input id="room-code" maxlength="6" placeholder="ROOM CODE" autocomplete="off" spellcheck="false"><button id="join" class="button secondary">Join <b>→</b></button></div></div><p id="home-error" class="error"></p><div class="card-foot"><span>✦ FREE TO PLAY</span><span>NO DOWNLOAD NEEDED</span></div></div>
+      <div class="sticker sticker-one">BUZZ<br>IN!<b>↘</b></div><div class="sticker sticker-two">10<br>ROUNDS</div>
+    </section>
+
+    <section id="game" class="game-view hidden">
+      <div class="game-header"><div><div class="eyebrow"><span class="spark">✳</span> THE ARENA</div><h2 id="room-title">ROOM <span id="room-label">------</span></h2></div><div class="header-actions"><button id="copy-code" class="button code-button">COPY ROOM CODE <b>▣</b></button><button id="leave" class="icon-button" title="Leave room">↗</button></div></div>
+      <div id="lobby" class="lobby-grid"><article class="panel lobby-main"><div class="panel-heading"><span>WAITING ROOM</span><span id="player-count" class="count-pill">1 / 8 PLAYERS</span></div><div class="invite-box"><div class="invite-label">YOUR ROOM CODE</div><button id="big-code" class="big-code">------</button><p>Share the code. First brain in wins bragging rights.</p></div><div id="player-list" class="player-grid"></div><div class="start-row"><button id="start" class="button primary start-button">Start the clash <b>→</b></button><span id="start-note">You need at least 2 players to begin</span></div></article><aside class="panel how-panel"><div class="panel-heading">HOW TO CLASH <span>✦</span></div><div class="how-step"><i>01</i><div><b>10-question clash</b><small>15 seconds to answer each question</small></div></div><div class="how-step"><i>02</i><div><b>Score points</b><small>Correct = 100 points + up to 100 speed bonus</small></div></div><div class="how-step"><i>03</i><div><b>Answer once</b><small>Wrong or missed answers earn 0 points</small></div></div><div class="mini-note">Next question starts when everyone answers or time runs out.<br><strong>Highest score wins. Tied top scores share the win.</strong></div></aside></div>
+      <div id="play" class="play-grid hidden"><section class="panel question-panel"><div class="question-meta"><span id="round-label">QUESTION 01 / 10</span><span id="category" class="category">GENERAL</span></div><div class="timer-wrap"><div id="timer-ring" class="timer-ring"><span id="timer">15</span><small>SEC</small></div></div><div class="progress-track"><div id="progress" class="progress-fill"></div></div><h2 id="question">Question goes here?</h2><div id="choices" class="choices"></div><div id="answer-note" class="answer-note">Tap an answer to lock it in</div><div id="reveal-note" class="reveal-note hidden"></div></section><aside class="panel scoreboard"><div class="panel-heading"><span>LIVE LEADERBOARD</span><span class="live-tag"><i></i> LIVE</span></div><div id="score-list" class="score-list"></div><div class="score-foot">FAST ANSWERS SCORE MORE <b>⚡</b></div></aside></div>
+      <div id="finished" class="finished panel hidden"><div class="finish-confetti">✳　✦　✳</div><div class="eyebrow">THAT’S A WRAP</div><h2 id="winner-title">CLASH COMPLETE</h2><p id="winner-subtitle">The scores are in.</p><div id="final-scores" class="final-scores"></div><button id="play-again" class="button primary">Play another game <b>↺</b></button></div>
+      <p id="game-error" class="error"></p>
+    </section>
+    <footer><span>BUILT FOR BRAGGING RIGHTS</span><span>CODE CLASH <b>✳</b></span></footer>
+  </main><div id="toast" class="toast"></div><script src="/app.js"></script>
+</body>
+</html>
